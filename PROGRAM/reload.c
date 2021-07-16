@@ -486,8 +486,6 @@ int ReloadToLocation(int location_index, aref reload_data)
 		}
 	}
 	// boal <--
-
-	Trace("Updating character location: " + Locations[location_index].id);
 	mc.location = Locations[location_index].id;
 	mc.location.group = "reload";
 	mc.location.locator = reload_data.emerge;
