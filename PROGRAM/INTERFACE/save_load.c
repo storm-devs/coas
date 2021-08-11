@@ -606,7 +606,7 @@ void FillEmptySaveSlot(int nSlot)
 	ShowDataForSave(nSlot,"empty",0,"");
 }
 
-void ShowDataForSave(int nSlot, string picname, ptr picpointer, string strdata)
+void ShowDataForSave(int nSlot, string picname, int picpointer, string strdata)
 {
 	string nodname = "SAVEIMG" + (nSlot+1);
 	bool bClickable = bThisSave;
@@ -623,7 +623,7 @@ void ShowDataForSave(int nSlot, string picname, ptr picpointer, string strdata)
 	}
 	
 	if( picpointer ) {
-		SendMessage( &GameInterface, "lslp", MSG_INTERFACE_MSG_TO_NODE, nodname, 7, picpointer );
+		SendMessage( &GameInterface, "lsll", MSG_INTERFACE_MSG_TO_NODE, nodname, 7, picpointer );
 		bClickable = true;
 	}
 	SetSelectable( nodname, bClickable );
@@ -738,7 +738,7 @@ void LoadInfo(int nInfoIdx, int nSaveIdx, string sSaveName)
 void procLoadOneSaveInfo()
 {
 	int i;
-	ptr pTex;
+	int pTex;
 	string strdata;
 	bool bYesScrShoter = IsEntity(scrshot);
 	for( i=0; i<10; i++ )
