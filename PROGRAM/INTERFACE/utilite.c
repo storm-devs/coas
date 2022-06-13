@@ -28,6 +28,7 @@ native bool XI_FindFolders(string sFindTemplate,aref arFoldersList);
 native int XI_StoreNodeLocksWithOff();
 native void XI_RestoreNodeLocks(int nStoreCode);
 native bool XI_IsKeyPressed(string key_name); // key_name = {"shift","control","alt"}
+native bool XI_IsVirtualKeyPressed(int key_code);
 native void XI_RegistryExitKey(string key_name);
 
 #libriary "script_interface_functions"
